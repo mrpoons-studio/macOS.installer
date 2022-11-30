@@ -1,14 +1,28 @@
-
 ---
-name: Download Videos
+name:  📝🔨 macOS Installation Disk Automated Creation Tool
 on: workflow_dispatch
+
 jobs:
     macos-iso-create:
-      name: Create macOS Installation Disk, ISO File
+      name: 📝 Create macOS Installation Disk, ISO File
       runs-on: macos-13
       steps:
       - name: Checkout 😝
         uses: actions/checkout@main
-      - name: Create ISOs
+      - name: Create ISOs 📦
         run: |
-          
+        
+      - name: Upload Artifact 📤
+        uses: actions/upload-artifact@main
+        with:
+          name: Your macOS Installation Disks, ISO Format.
+          path:
+          name: Your macOS Installation Disks, DMG Format.
+          path:
+      - name: Generate release tag
+        id: release
+        run: |
+        echo "::set-output name=release_tag::v$(date +"%d.%m.%Y")"
+      - name: Create Release 📝
+        uses: softprops/action-gh-release@master
+        
