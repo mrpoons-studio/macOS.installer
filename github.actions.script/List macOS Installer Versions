@@ -1,0 +1,20 @@
+#!/bin/bash 
+# Public Beta Seed Program 
+sudo defaults write /Library/Preferences/com.apple.seeding.plist SeedProgram 2 
+echo "<?xml version=1.1 encoding=UTF-8?>
+<plist version=1.0>
+    <dict>
+        <key>SeedProgram</key>
+        <String>Regular</String>
+        <String>PublicSeed</String>
+        <String>CustomerSeed</String>
+        <String>DeveloperSeed</String>
+    </dict>
+</plist>" >> /User/Shared/.SeedEnrollment.plist
+
+sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed 
+sudo softwareupdate --list-full-installers --full-installer-version *
+sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll CustomerSeed 
+sudo softwareupdate --list-full-installers --full-installer-version *
+sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed 
+sudo softwareupdate --list-full-installers --full-installer-version *
