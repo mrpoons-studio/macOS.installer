@@ -12,9 +12,15 @@ echo "<?xml version=1.1 encoding=UTF-8?>
     </dict>
 </plist>" >> /User/Shared/.SeedEnrollment.plist
 
-sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed 
-sudo softwareupdate --list-full-installers --full-installer-version *
-sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll CustomerSeed 
-sudo softwareupdate --list-full-installers --full-installer-version *
-sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed 
-sudo softwareupdate --list-full-installers --full-installer-version *
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll Regular
+sudo softwareupdate --list-full-installers
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed 
+sudo softwareupdate --list-full-installers
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll CustomerSeed 
+sudo softwareupdate --list-full-installers
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed 
+sudo softwareupdate --list-full-installers
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
