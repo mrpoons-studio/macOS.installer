@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Regular Seed Program
+
+sudo defaults write /Library/Preferences/com.apple.seeding.plist SeedProgram 2
+
+echo "
+<?xml version=1.1 encoding=UTF-8?>
+<plist version=1.0>
+<dict>
+<key>SeedProgram</key>
+<String>Regular</String>
+<String>PublicSeed</String>
+<String>CustomerSeed</String>
+<String>DeveloperSeed</String>
+</dict>
+</plist>" >> /User/Shared/.SeedEnrollment.plist
+
+# A note for Apple Seed Programs, like Microsoft's Insider Programs:
+# Apple releases OSes software every year which complies software as a service , SaaS, basis. Before the software released officially, they have alpha and beta versions before comes the release that it is real for production.
+# So, for Apple, they have 4 Apple Seed Programs for choices to us. The Seeds are:
+# Regular
+# PublicSeed
+# CustomerSeed
+# DeveloperSeed
+
+# You will recieve the builds with first priority If user select 3 seed programs instead of "Regular", means the builds numbers higher than regular builds usually for production.
+
+# We will explain the 4 Apple Seed Programs and how they works.
+
+# Regular, aka Regular Seed:
+# This is default seed when Apple devices once manufactured. And it must use this seed for daily production purposes. This seed also used for GitHub Actions by default.
+
+# PublicSeed, aka Public Beta Seed:
+# This is the beta seed which used for up to 75% of users if users have an Apple ID and registered the Apple Public Beta Program.
+# Apple users once registered this program, you will recieve beta builds but have no developer tools and only for general testing purpose before rolled out officially. And this is only seed to public for free of charge.
+
+# CustomerSeed, aka Developer Beta Seed on Downloading Old Packages available:
+# This is beta seed for developers which allows downloading old and current versions of macOS packages.
+# Users must apply an developer account with Apple ID and pay USD$99 annually before downloading this seed program's beta builds.
+# User with Apple Developer ID, once downloaded and installed these of builds, you will only recieve developer community support by Apple.
+
+# DeveloperSeed, aka Developer Seed Offical:
+# This is beta seed for developers which allows downloading most current versions of macOS packages.
+# Users must apply an developer account with Apple ID and pay USD$99 annually before downloading this seed program's beta builds.
+# User with Apple Developer ID, once downloaded and installed these of builds, you will only recieve developer community support by Apple.
+
+# This creation script is default to Public Seed while generating installation disk.
+
+# Side note 1: How to enroll your Apple Devices to your suitable Apple Seed Program? 
+# A. If you have an Apple ID, please follow the instructions below:
+# Recommend option by Apple Inc.
+# 1. Head to https://beta.apple.com or https://developer.apple.com.
+# 2. Signin your Apple ID.
+# 3. If you new to Apple Seed Programs even Public Beta or Developer Beta Program, agree the releative ToS and following instructions on screen. For Developer ID registration, prepare your bank card with balance quota. This is your main bank card which used for annual subscription for Apple Developer ID. Or skip this step if you are enrolled the Programs already.
+# 4. Download and run the automated tool by Apple to enroll your Apple device(s) to gain your beta permission by on-screen instructions.
+# 5. Check your device update and recieve beta builds using Settings >> General >> Check device update >> Install if have beta builds. The on-screen instructions may depends your macOS, iOS and/or iPad OS versions.
+
+# B. If you have local account on Apple device(s) only, means not applied Apple ID, you could only downloading Apple Developer Seed Program by Apple Package File. To proceed (Recommend by Mr. Poon's Studio):
+# 1. Go to https://betaprofiles.com which are now shutdown by default. Click Join Community. It will leads to Twitter Community.
+# 2. Click the link provided by Community.
+# 3. Select your Apple OS depends your Apple devices. e.g. MacBook Pro With MX arm64 chips, scroll down to macOS and hit install profile.
+# 4. Right click and copy the links if you need download with aria2c tool on Mac system or for other Apple's devices click install. It will download an automated tool backed up from Apple.
+# 5. Do the last 2 step mentioned in Part A.
+
+# C. If you not eager to download anything and only run the script to enroll your Apple to either one of Apple Seed Programs, Do the following below (advanced users only and it is not recommended to public Apple user because Apple not mentioned it):
+# 1. Run these of commands with sudo privileges:
+# sudo curl "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
+# sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll YourSeedNeedToEnroll
+# 2. Enter your macOS local administrator account password when asked and you may need to restart your macOS.
