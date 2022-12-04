@@ -8,4 +8,4 @@ jobs:
       runs-on: macos-12
       steps:
       - name: Ask for help ❓
-        run: softwareupdates --help
+        run: softwareupdate --help
