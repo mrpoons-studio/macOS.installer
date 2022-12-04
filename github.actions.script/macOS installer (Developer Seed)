@@ -85,8 +85,7 @@ echo "
 
 sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed
 
-sudo softwareupdate --list-full-installers --full-installer-version 13.*
-sudo softwareupdate --fetch-full-installer --full-installer-version 13.*
+sudo softwareupdate --fetch-full-installer -a --agree-to-license
 sudo hdiutil create -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk -size 20g -volname macOS\ 13\ Beta\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 13\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 13\ beta --nointeraction
 sudo hdiutil detach /volumes/macOS\ 13\ Beta\ Installation\ Disk
