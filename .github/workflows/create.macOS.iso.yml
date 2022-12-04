@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
     macos-iso-create:
       name: 📝 Create macOS Installation Disk, ISO File
-      runs-on: macos-13
+      runs-on: macos-12
       steps:
       - name: Checkout 😝
         uses: actions/checkout@main
