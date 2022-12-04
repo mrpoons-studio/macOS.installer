@@ -1,0 +1,11 @@
+---
+name:  📝🔨 macOS Installation Disk Automated Creation Tool
+on: workflow_dispatch
+
+jobs:
+    macos-iso-create:
+      name: 📝 Create macOS Installation Disk, ISO File
+      runs-on: macos-13
+      steps:
+      - name: Ask for help ❓
+        run: softwareupdates --help
