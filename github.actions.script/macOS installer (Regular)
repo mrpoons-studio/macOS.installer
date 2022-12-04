@@ -68,3 +68,26 @@ echo "
 # sudo curl "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
 # sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll YourSeedNeedToEnroll
 # 2. Enter your macOS local administrator account password when asked and you may need to restart your macOS.
+# 3. Do the last 2 step mentioned in Part A.
+
+# Side note 2: Leave the program from your Apple device(s):
+# To leave the program by Apple device(s), follow the procedures below:
+# A. macOS:
+# 1a. From the Apple menu in the corner of your screen:
+# Choose System Settings. Then click General in the sidebar, and Software Update on the right. or
+# Or choose System Preferences. Then click Software Update.
+# 1b. Under "The macOS is enrolled in the Apple Seed Program.", click details and restore defaults to confirm your choice. Or click cancel to remain current state.
+# 2a. From spotlight search, type Terminal and press enter.
+# 2b. Run the command below:
+# sudo curl "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll Apple Seed Program" | sudo bash
+
+# In this automated file uses in GitHub Actions. It defaults to Apple's Regular Seed Program.
+
+sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll Regular
+
+sudo softwareupdate --fetch-full-installer -a --agree-to-license
+sudo hdiutil create -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk -size 20g -volname macOS\ 13\ Beta\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
+sudo /Applications/Install\ macOS\ 13\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 13\ beta --nointeraction
+sudo hdiutil detach /volumes/macOS\ 13\ Beta\ Installation\ Disk
+sudo hdiutil convert ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.dmg -format UDTO -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.iso
+sudo hdiutil convert ~/Desktop/Install\ macOS\ 13\ beta.dmg -format UDRO -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.dmg
