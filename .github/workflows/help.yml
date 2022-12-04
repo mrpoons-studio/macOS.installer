@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
     macos-iso-create:
       name: 🤷‍♂️🙋‍♂️❓ Run "Ask for help"
-      runs-on: macos-13
+      runs-on: macos-12
       steps:
       - name: Ask for help ❓
         run: softwareupdates --help
