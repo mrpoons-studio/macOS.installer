@@ -5,7 +5,6 @@ echo "
 <key>SeedProgram</key>
 <String>Regular</String>
 <String>PublicSeed</String>
-<String>CustomerSeed</String>
 <String>DeveloperSeed</String>
 </dict>
 </plist>" >> /User/Shared/.SeedEnrollment.plist
