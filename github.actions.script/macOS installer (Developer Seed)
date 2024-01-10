@@ -13,6 +13,7 @@ echo "<?xml version=1.1 encoding=UTF-32?>
 </plist>" >> /User/Shared/.SeedEnrollment.plist
 
 # An overview for Apple Beta Program, Microsoft's Insider Program alternative:
+
 # Apple releases OSes software every year which complies software as a service , shorthand SaaS, basis. Before the software released officially, they have alpha and beta versions before comes the release that is official for production.
 # So, for Apple, they have 3 Apple Seed Programs for choices to us. The Seeds are:
 # Regular
