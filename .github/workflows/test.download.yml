@@ -1,1 +1,14 @@
+---
+name:  📝🔨 macOS Installation Disk Automated Download Test Tool
+on: workflow_dispatch
 
+jobs:
+  macos-iso-create:
+    name: 📝 macOS Installation Download Test
+    runs-on: macos-13
+    steps:
+      - name: Create ISOs 📦
+        run: |
+          curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
+          sudo seedutil enroll DeveloperSeed
+          sudo softwareupdate --fetch-full-installer --agree-license
