@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# Public Beta Seed Program
+# Apple Public Beta Program
 
-echo "
-<?xml version=1.1 encoding=UTF-8?>
+echo "<?xml version=1.1 encoding=UTF-8?>
 <plist version=1.0>
 <dict>
 <key>SeedProgram</key>
 <String>Regular</String>
 <String>PublicSeed</String>
-<String>CustomerSeed</String>
 <String>DeveloperSeed</String>
 </dict>
 </plist>" >> /User/Shared/.SeedEnrollment.plist
@@ -79,7 +77,7 @@ echo "
 
 sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed
 
-sudo softwareupdate --fetch-full-installer -a --agree-to-license
+sudo softwareupdate --fetch-full-installer --agree-to-license
 sudo hdiutil create -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk -size 20g -volname macOS\ 13\ Beta\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 13\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 13\ beta --nointeraction
 sudo hdiutil detach /volumes/macOS\ 13\ Beta\ Installation\ Disk
