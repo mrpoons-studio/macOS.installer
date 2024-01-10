@@ -7,7 +7,6 @@ echo "<?xml version=1.1 encoding=UTF-8?>
         <key>SeedProgram</key>
         <String>Regular</String>
         <String>PublicSeed</String>
-        <String>CustomerSeed</String>
         <String>DeveloperSeed</String>
     </dict>
 </plist>" >> /User/Shared/.SeedEnrollment.plist
@@ -16,9 +15,6 @@ sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/se
 sudo softwareupdate --list-full-installers
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed 
-sudo softwareupdate --list-full-installers
-sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
-sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll CustomerSeed 
 sudo softwareupdate --list-full-installers
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed 
