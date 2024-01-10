@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   list-macos-installer:
-    steps:
     runs-on: macos-13
+    steps:
       - name: List Installer
         run: curl -sL https://github.com/mrpoons-studio/macOS.installer/raw/main/github.action.script/ | sudo bash
