@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   macos-iso-create:
     name: 📝 macOS Installation Download Test
-    runs-on: macos-13
+    runs-on: macos-12
     steps:
       - name: Create ISOs 📦
         run: |
