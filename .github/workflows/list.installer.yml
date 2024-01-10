@@ -1,0 +1,9 @@
+---
+name:  📝🔨 macOS Installation Disk Automated Listing Tool
+on: workflow_dispatch
+
+jobs:
+  list-macos-installer:
+    steps:
+      runs-on: macos-13
+      
