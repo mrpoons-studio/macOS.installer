@@ -1,6 +1,6 @@
 #!/bin/bash 
 # Apple Beta Seeds Program 
-curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll%20Apple%20Seed%20Programs" | sudo bash
+curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll Regular
 sudo softwareupdate --list-full-installers
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
