@@ -78,8 +78,8 @@ echo "<?xml version=1.1 encoding=UTF-8?>
 sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed
 
 sudo softwareupdate --fetch-full-installer --agree-to-license
-sudo hdiutil create -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk -size 20g -volname macOS\ 13\ Beta\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
-sudo /Applications/Install\ macOS\ 13\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 13\ beta --nointeraction
-sudo hdiutil detach /volumes/macOS\ 13\ Beta\ Installation\ Disk
-sudo hdiutil convert ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.dmg -format UDTO -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.iso
-sudo hdiutil convert ~/Desktop/Install\ macOS\ 13\ beta.dmg -format UDRO -o ~/Desktop/macOS\ 13\ Beta\ Installation\ Disk.dmg
+sudo hdiutil create -o ~/Desktop/macOS\ 14\ Installation\ Disk -size 20g -volname macOS\ 14\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
+sudo /Applications/Install\ macOS\ 14\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 14 --nointeraction
+sudo hdiutil detach /Volumes/macOS\ 14\ Installation\ Disk
+sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDTO -o ~/Desktop/macOS\ 14\ Beta\ Installation\ Disk.iso
+sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDRO -o ~/Desktop/macOS\ 14\ Beta\ Installation\ Disk.dmg
