@@ -11,16 +11,17 @@ jobs:
         run: |
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
-          sudo softwareupdate --fetch-full-installer --agree-to-license
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll Apple Seed Programs" | sudo bash
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
-          sudo softwareupdate --fetch-full-installer --agree-to-license
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll Apple Seed Programs" | sudo bash
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll Regular
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll Apple Seed Programs" | sudo bash
