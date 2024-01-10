@@ -10,6 +10,8 @@ jobs:
       - name: Create ISOs 📦
         run: |
         
+      - name: Create DMGs
+        run: |
       - name: Upload Artifact 📤
         uses: actions/upload-artifact@main
         with:
