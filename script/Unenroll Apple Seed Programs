@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo /System/Library/PrivateFraeworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+
+sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
