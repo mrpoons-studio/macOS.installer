@@ -2,8 +2,8 @@
 # Apple Beta Seeds Program 
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed 
 sudo softwareupdate --list-full-installers
-sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll PublicSeed 
 sudo softwareupdate --list-full-installers
-sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
+curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
 sudo softwareupdate --list-full-installers
