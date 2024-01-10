@@ -2,15 +2,7 @@
 
 # Apple Developer Beta Program
 
-echo "<?xml version=1.1 encoding=UTF-32?>
-<plist version=1.0>
-<dict>
-<key>SeedProgram</key>
-<String>Regular</String>
-<String>PublicSeed</String>
-<String>DeveloperSeed</String>
-</dict>
-</plist>" >> /User/Shared/.SeedEnrollment.plist
+curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
 
 # An overview for Apple Beta Program, Microsoft's Insider Program alternative:
 
