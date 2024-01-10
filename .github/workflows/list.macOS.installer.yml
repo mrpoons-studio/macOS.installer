@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   list-macos-installer:
-    runs-on: macos-13
+    runs-on: macos-12
     steps:
       - name: List Installer
         run: curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/List macOS Installer Versions" | sudo bash
