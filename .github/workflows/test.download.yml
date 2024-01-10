@@ -12,4 +12,15 @@ jobs:
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
           sudo seedutil enroll DeveloperSeed
           sudo softwareupdate --fetch-full-installer --agree-to-license
-          sudo ls /Application/Install\
+          sudo ls /Application/Install\ macOS*.app
+          sudo rm -rf /Application/Install\ macOS*.app
+          sudo seedutil unenroll
+          sudo seedutil enroll PublicSeed
+          sudo softwareupdate --fetch-full-installer --agree-to-license
+          sudo ls /Application/Install\ macOS*.app
+          sudo rm -rf /Application/Install\ macOS*.app
+          sudo seedutil unenroll
+          sudo seedutil enroll Regular
+          sudo ls /Application/Install\ macOS*.app
+          sudo rm -rf /Application/Install\ macOS*.app
+          sudo seedutil unenroll
