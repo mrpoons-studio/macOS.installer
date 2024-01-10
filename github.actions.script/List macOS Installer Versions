@@ -1,15 +1,6 @@
 #!/bin/bash 
 # Apple Beta Seeds Program 
-echo "<?xml version=1.1 encoding=UTF-8?>
-<plist version=1.0>
-    <dict>
-        <key>SeedProgram</key>
-        <String>Regular</String>
-        <String>PublicSeed</String>
-        <String>DeveloperSeed</String>
-    </dict>
-</plist>" >> /User/Shared/.SeedEnrollment.plist
-
+curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Enroll Apple Seed Programs" | sudo bash
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll Regular
 sudo softwareupdate --list-full-installers
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil unenroll
