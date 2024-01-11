@@ -65,7 +65,7 @@
 # 3c. Run "(sudo) defaults write com.apple.SoftwareUpdate AppleSUCatalogURL" in macOS Terminal using example URL by following with all both users and root:
 # "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 
-# In this automated file uses in GitHub Actions. It defaults to Apple Developer Beta Program. And designed for Github macOS 12 runner. We are enquiring Apple for solution, on how to acquiring Apple ID login credential along with macOS 13.4 powered GitHub Actions.
+# In this automated file uses in GitHub Actions. It defaults to Apple Developer Beta Program. And designed for Github macOS 13 runner. 
 
 sudo defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
 defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
