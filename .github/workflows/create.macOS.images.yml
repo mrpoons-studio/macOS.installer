@@ -5,14 +5,14 @@ on: workflow_dispatch
 jobs:
   macos-iso-create:
     name: 📝 Create macOS Installation Disk, ISO File
-    runs-on: macos-12
+    runs-on: macos-13
     steps:
       - name: Create ISOs and DMGs 📦
         id: create-macOS
         run: |
-         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20Installer%20(Regular%20Seed)" | bash
-         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20installer%20(Public%20Seed)" | bash
-         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20installer%20(Developer%20Seed)" | bash
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/macOS%20installer%20(Developer%20Seed)" | bash
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/macOS%20installer%20(Public%20Seed)" | bash
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/macOS%20Installer%20(Regular%20Seed)" | bash
       - name: Upload Artifact 📤
         id: upload-artifact-dmg
         uses: actions/upload-artifact@main
