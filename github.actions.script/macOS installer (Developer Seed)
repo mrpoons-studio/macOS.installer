@@ -61,7 +61,7 @@
 
 sudo /System/Library/PrivateFrameworks/Seeding.Framework/Versions/A/Resources/seedutil enroll DeveloperSeed
 
-sudo softwareupdate --fetch-full-installer --agree-to-license
+sudo softwareupdate --fetch-full-installer --full-installer-version 14 --agree-to-license
 sudo hdiutil create -o ~/Desktop/macOS\ 14\ Installation\ Disk -size 20g -volname macOS\ 14\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 14\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 14 --nointeraction
 sudo hdiutil detach /Volumes/macOS\ 14\ Installation\ Disk
