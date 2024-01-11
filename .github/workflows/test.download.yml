@@ -12,16 +12,16 @@ jobs:
           echo "${HOME}"
           sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-          sudo softwareupdate --fetch-full-installer --agree-to-license --force
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
           sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14beta-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14beta-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-          sudo softwareupdate --fetch-full-installer --agree-to-license --force
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
           sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-          sudo softwareupdate --fetch-full-installer --agree-to-license --force
+          sudo softwareupdate --fetch-full-installer -a --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
