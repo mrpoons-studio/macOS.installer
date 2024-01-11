@@ -5,25 +5,24 @@ on: workflow_dispatch
 jobs:
   macos-download-test:
     name: 📝 macOS Installation Download Test
-    runs-on: macos-12
+    runs-on: macos-13
     steps:
       - name: Download Test 📥
         run: |
           echo "${HOME}"
-          sudo softwareupdate -lia --agree-to-license --force
-          sudo ls /Application/Install*.app
-          sudo rm -rf /Application/Install*.app
-          curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
-          sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
+          sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+          defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
-          curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
+          sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14beta-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+          defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14beta-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
           sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
-          curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
+          sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+          defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
           sudo softwareupdate --fetch-full-installer --full-installer-version 14.3 --agree-to-license --force
           sudo ls /Application/Install*.app
           sudo rm -rf /Application/Install*.app
