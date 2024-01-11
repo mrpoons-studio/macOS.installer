@@ -67,8 +67,8 @@
 
 # In this automated file uses in GitHub Actions. It defaults to Apple Developer Beta Program. And designed for Github macOS 12 runner. We are enquiring Apple for solution, on how to acquiring Apple ID login credential along with macOS 13.4 powered GitHub Actions.
 
-sudo defaults write com.apple.SoftwareUpdate "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-defaults write com.apple.SoftwareUpdate "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
+defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
 sudo softwareupdate --fetch-full-installer --full-installer-version 14 --agree-to-license --force
 sudo hdiutil create -o ~/Desktop/macOS\ 14\ Installation\ Disk -size 20g -volname macOS\ 14\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 14\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 14 --nointeraction
@@ -76,5 +76,5 @@ sudo hdiutil detach /Volumes/macOS\ 14\ Installation\ Disk
 sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDTO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.iso
 sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDRO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.dmg
 sudo rm -rf /Application/Install*.app
-sudo defaults write com.apple.SoftwareUpdate "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-defaults write com.apple.SoftwareUpdate "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
+defaults write com.apple.SoftwareUpdate https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz
