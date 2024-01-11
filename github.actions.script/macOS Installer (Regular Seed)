@@ -26,40 +26,47 @@
 # You should apply an Apple developer ID with your Apple ID and if you pay USD$99 annually for premium access, including downloading that seed program's beta builds.
 # Users with Apple Developer ID, once downloaded and installed these of builds, you will recieve developer community support by Apple only.
 
-# This creation script is default to Developer Seed while generating installation disk.
+# This creation script in GitHub Actions defaults generating all types of installation disk.
 
 # Side note 1: How to enroll your Apple Devices to your suitable Apple Seed Program? 
-# A. If you have an Apple ID, please follow the instructions below:
+# A. Must have your Apple ID, and follow the instructions below:
 # Recommend option by Apple Inc.
 # 1. Head to https://beta.apple.com or https://developer.apple.com.
 # 2. Signin or Singup your Apple ID.
-# 3. Either Apple's Public Beta or Developer Beta Program, must agree the releative ToS and following instructions on screen, if you are new to Apple Beta Program. Prepare your bank card with sufficient balance quota for developer premium ID registration. This is your main payment method which used for annual subscription for Apple Developer ID. Or skip this step, if you are enrolled the Programs, already.
-# 4. To gain your beta permission, download the automated tool by Apple to enroll your Apple device(s) (version 13.3 or eariler), or just signin your Apple ID (starting from version 13.4), by on-screen instructions.
+# 3. Either Apple's Public Beta or Developer Beta Program, must agree the releative ToS and following instructions on screen, if you are new to Apple Beta Program. Prepare your bank card with sufficient balance quota for beta premium ID registration, or just sign in and finished on browser. This is your main payment method which used for annual subscription for Apple Developer ID. Or skip this step, if you are enrolled the Programs, already.
+# 4. Spotlight search "Software Update", then switch to one of Apple Beta Program enrolling your Apple device(s) (starting from version 13.4), Or, Install Beta Profile download from Apple. May reboot your device (macOS 13.3 eariler).
 # 5. Check your device update and recieve beta builds using Settings >> General >> Check device update >> Install if have beta builds. The on-screen instructions may depends your macOS, iOS and/or iPad OS versions.
 
-# B. If you have local account on Apple device(s) only, means not applied Apple ID, you could only downloading Apple Developer Seed Program by Apple Package File. To proceed (Recommend by Mr. Poon's Studio) (Will deprecate soon):
-# 1. Go to https://betaprofiles.com which are now shutdown by default. Click Join Community. It will leads to X Community.
+# B. You could joining Apple Beta Program by downloading Apple Beta Profile with local account on Apple device(s), not Apple ID signed-in, only. Proceeding (Recommend by Mr. Poon's Studio) (Deprecated on macOS 13.4 and further):
+# 1. To https://betaprofiles.com which are now shutdown by default. Click Join Community. It leads one of valid X Community.
 # 2. Click the link provided by Community.
 # 3. Select your Apple OS depends your Apple devices. e.g. MacBook Pro With Apple M series chips, scroll down to macOS and hit install profile.
-# 4. Right click and copy the links if you need download with aria2c tool on Mac system or for other Apple's devices click install. It will download an automated tool backend from Apple.
-# 5. Do the last 2 step mentioned in Part A.
+# 4. Right click and copy the link, download with aria2c tool on Mac system or for other Apple's devices. double click downloaded file and profile install. It automates with seedutil.
+# 5. Do the last step mentioned in Part A.
 
-# C. If you not eager to download anything and only run the script to enroll your Apple to either one of Apple Seed Programs, Do the following below (advanced users only and removed starting macOS 13.4):
-# 1. Run these of commands with sudo privileges:
-# sudo /System/Library/PrivateFraemworks/Seeding.Framework/Versions/A/Resources/seedutil enroll YourSeedNeedToEnroll
-# 2. Enter your macOS local administrator account password when asked and you may need to restart your macOS.
-# 3. Do the last 2 step mentioned in Part A.
+# C. Do the following below by running the script, enrolling you either one of Apple Seed Programs, if you not eagering joining anything (advanced users only and starting macOS 13.4):
+# 1. Run these of commands:
+# sudo defaults write com.apple.SoftwareUpdate AppleSUCatalogURL
+# defaults write com.apple.SoftwareUpdate AppleSUCatalogURL
+# - with either one URL exampled:
+# "https://swscan.apple.com/content/catalogs/others/index-14seed-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+# "https://swscan.apple.com/content/catalogs/others/index-14beta-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+# 2. Enter your macOS local administrator account password when asked with sudo mode and you may need to restart your macOS.
+# 3. Do the last step mentioned in Part A.
 
 # Side note 2: Leave the program from your Apple device(s):
 # To leave the program by Apple device(s), follow the procedures below:
 # 1. From the Apple menu in the corner of your screen:
 # 2. Choose System Preferences. Then click Software Update.
 # 3a. Click details and restore defaults, under "The macOS is enrolled in the Apple Seed Program.", or click cancel to remain current state, to confirm your choice (macOS 13.3 or earier).
-# 3b. Reinstall macOS to go back Regular Seed by rebooting your Mac machine with key combination.
+# 3b. Change back "Regular" once may shown in seeds selection and wait for next official stable release, while you signed-in your Apple ID in Mac device (macOS 13.4 further).
+# 3c. Run "(sudo) defaults write com.apple.SoftwareUpdate AppleSUCatalogURL" in macOS Terminal using example URL by following with all both users and root:
+# "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 
-# In this automated file uses in GitHub Actions. It defaults to Apple Program for Daily Production. And designed for Github macOS 12 runner. We are enquiring Apple for solution, on how to acquiring Apple ID login credential along with macOS 13.4 powered GitHub Actions.
+# In this automated file uses in GitHub Actions. It defaults to Apple Program for Daily Production. And designed for Github macOS 13 runner. 
 
-curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
+sudo defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+defaults write com.apple.SoftwareUpdate CatalogURL "https://swscan.apple.com/content/catalogs/others/index-14-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 sudo softwareupdate --fetch-full-installer --full-installer-version 14 --agree-to-license --force
 sudo hdiutil create -o ~/Desktop/macOS\ 14\ Installation\ Disk -size 20g -volname macOS\ 14\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 14\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 14 --nointeraction
@@ -67,4 +74,3 @@ sudo hdiutil detach /Volumes/macOS\ 14\ Installation\ Disk
 sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDTO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.iso
 sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDRO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.dmg
 sudo rm -rf /Application/Install*.app
-curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
