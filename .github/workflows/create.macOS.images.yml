@@ -17,7 +17,7 @@ jobs:
           name: Your macOS Installation Disks, ISO Format.
           path:
           compression-level: 9
-            - name: Generate release tag
+      - name: Generate release tag
         id: release
         run: |
           echo "::set-output name=release_tag::v$(date +"%d.%m.%Y")"
