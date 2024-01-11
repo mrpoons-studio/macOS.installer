@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Download Test 📥
         run: |
+          echo "${HOME}"
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
           sudo softwareupdate --fetch-full-installer --agree-to-license
           sudo ls /Application/Install\ macOS*.app
