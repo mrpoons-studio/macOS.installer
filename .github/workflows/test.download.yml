@@ -3,24 +3,24 @@ name:  📝🔨 macOS Installation Disk Automated Download Test Tool
 on: workflow_dispatch
 
 jobs:
-  macos-iso-create:
+  macos-download-test:
     name: 📝 macOS Installation Download Test
     runs-on: macos-12
     steps:
       - name: Download Test 📥
         run: |
           echo "${HOME}"
-          sudo softwareupdate -i -a
+          sudo softwareupdate -l -a --force --background
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
-          sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license
+          sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license --force --background 
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
-          sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license
+          sudo softwareupdate --fetch-full-installer --full-installer-version 14.2.1 --agree-to-license --force --background
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
-          sudo softwareupdate --fetch-full-installer --full-installer-version 14.3 --agree-to-license
+          sudo softwareupdate --fetch-full-installer --full-installer-version 14.3 --agree-to-license --force --background
           sudo ls /Application/Install\ macOS*.app
           sudo rm -rf /Application/Install\ macOS*.app
