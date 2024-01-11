@@ -15,10 +15,10 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: Your macOS Installation Disks, ISO Format.
-          path:
+          path: ""
           compression-level: 9
       - name: Generate release tag
-        id: release
+        id: release-tag-iso
         run: |
           echo "::set-output name=release_tag::v$(date +"%d.%m.%Y")"
       - name: Create Release 📝
@@ -32,10 +32,10 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: Your macOS Installation Disks, DMG Format.
-          path:
+          path: ""
           compression-level: 9
-            - name: Generate release tag
-        id: release
+      - name: Generate release tag
+        id: release-tag-dmg
         run: |
           echo "::set-output name=release_tag::v$(date +"%d.%m.%Y")"
       - name: Create Release 📝
