@@ -10,6 +10,9 @@ jobs:
       - name: Download Test 📥
         run: |
           echo "${HOME}"
+          sudo softwareupdate -ia --agree-to-license --force
+          sudo ls /Application/Install\ macOS*.app
+          sudo rm -rf /Application/Install\ macOS*.app
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
           sudo softwareupdate -la
           sudo softwareupdate -ia --agree-to-license --force
