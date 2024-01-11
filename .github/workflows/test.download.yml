@@ -11,18 +11,18 @@ jobs:
         run: |
           echo "${HOME}"
           sudo softwareupdate -lia --agree-to-license --force
-          sudo ls /Application/Install\ macOS*.app
-          sudo rm -rf /Application/Install\ macOS*.app
+          sudo ls /Application/Install*.app
+          sudo rm -rf /Application/Install*.app
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
           sudo softwareupdate -lia --agree-to-license --force
-          sudo ls /Application/Install\ macOS*.app
-          sudo rm -rf /Application/Install\ macOS*.app
+          sudo ls /Application/Install*.app
+          sudo rm -rf /Application/Install*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
           sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
           sudo softwareupdate -lia --agree-to-license --force
-          sudo ls /Application/Install\ macOS*.app
-          sudo rm -rf /Application/Install\ macOS*.app
+          sudo ls /Application/Install*.app
+          sudo rm -rf /Application/Install*.app
           curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | sudo bash
           sudo softwareupdate -lia --agree-to-license --force
-          sudo ls /Application/Install\ macOS*.app
-          sudo rm -rf /Application/Install\ macOS*.app
+          sudo ls /Application/Install*.app
+          sudo rm -rf /Application/Install*.app
