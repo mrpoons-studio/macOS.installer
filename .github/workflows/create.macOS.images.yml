@@ -7,26 +7,12 @@ jobs:
     name: 📝 Create macOS Installation Disk, ISO File
     runs-on: macos-12
     steps:
-      - name: Create ISOs 📦
-        id: create-macOS-isos
+      - name: Create ISOs and DMGs 📦
+        id: create-macOS
         run: |
-      - name: Upload Artifact 📤
-        id: upload-artifact-iso
-        uses: actions/upload-artifact@main
-        with:
-          name: Your macOS Installation Disks, ISO Format.
-          path: ""
-          compression-level: 9
-      - name: Generate release tag
-        id: release-tag-iso
-        run: |
-          echo "::set-output name=release_tag::v$(date +"%d.%m.%Y")"
-      - name: Create Release 📝
-        uses: softprops/action-gh-release@master
-        
-      - name: Create DMGs 📦
-        id: create-macOS-dmgs
-        run: |
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20Installer%20(Regular%20Seed)" | bash
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20installer%20(Public%20Seed)" | bash
+         curl -sL "https://github.com/mrpoons-studio/macOS.installer/blob/main/github.actions.script/macOS%20installer%20(Developer%20Seed)" | bash
       - name: Upload Artifact 📤
         id: upload-artifact-dmg
         uses: actions/upload-artifact@main
