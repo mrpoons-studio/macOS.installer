@@ -64,7 +64,7 @@ sudo softwareupdate --fetch-full-installer --full-installer-version 14 --agree-t
 sudo hdiutil create -o ~/Desktop/macOS\ 14\ Installation\ Disk -size 20g -volname macOS\ 14\ Installation\ Disk -layout GUID -fs APFS -format UDBZ -tasks 16 -attach
 sudo /Applications/Install\ macOS\ 14\ beta.app/Contents/Resources/createinstallmedia --volume /Volumes/Install\ macOS\ 14 --nointeraction
 sudo hdiutil detach /Volumes/macOS\ 14\ Installation\ Disk
-sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDTO -o ~/Desktop/macOS\ 14\ Beta\ Installation\ Disk.iso
-sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDRO -o ~/Desktop/macOS\ 14\ Beta\ Installation\ Disk.dmg
-sudo rm -rf /Application/Install\ macOS*.app
+sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDTO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.iso
+sudo hdiutil convert ~/Desktop/macOS\ 14\ Installation\ Disk -format UDRO -o ~/Users/runners/macOS\ 14\ Beta\ Installation\ Disk.dmg
+sudo rm -rf /Application/Install*.app
 curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/script/Unenroll%20Apple%20Seed%20Programs" | bash
