@@ -1,3 +1,4 @@
+#!/bin/bash
 # sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
 # sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
 # sudo /usr/libexec/PlistBuddy -c Print /System/Library/Preferences/com.apple.SoftwareUpdate.plist
