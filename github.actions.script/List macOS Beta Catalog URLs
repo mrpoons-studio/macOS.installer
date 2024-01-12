@@ -1,23 +1,21 @@
 #!/bin/bash
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
-# sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
-# sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.SoftwareUpdate.plist
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
+sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12seed-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12seed-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 # sudo softwareupdate --list-full-installer -a --force
-# sudo softwareupdate --clear-catalog
-# sudo softwareupdate --set-catalog --help
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
 
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
-# sudo /usr/libexec/PlistBuddy -c Print /System/Library/Preferences/com.apple.SoftwareUpdate.plist
-# sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.SoftwareUpdate.plist
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
+sudo /usr/libexec/PlistBuddy -c Print /System/Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12beta-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12beta-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 # sudo softwareupdate --list-full-installer -a --force
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
 
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll Regular
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
-# sudo /usr/libexec/PlistBuddy -c Print /System/Library/Preferences/com.apple.SoftwareUpdate.plist
-# sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.SoftwareUpdate.plist
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll Regular
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
+sudo /usr/libexec/PlistBuddy -c Print /System/Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo /usr/libexec/PlistBuddy -c Print ~/Library/Preferences/com.apple.*.plist | grep "https://swscan.apple.com/content/catalogs/others/index-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 # sudo softwareupdate --list-full-installer -a --force
-# sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
+sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
