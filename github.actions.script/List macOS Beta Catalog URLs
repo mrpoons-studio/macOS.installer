@@ -1,14 +1,17 @@
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll DeveloperSeed
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
 sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
+# sudo softwareupdate --list-full-installer -a --force
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
 
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll PublicSeed
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
 sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
+# sudo softwareupdate --list-full-installer -a --force
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
 
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil enroll Regular
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil current
 sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
+# sudo softwareupdate --list-full-installer -a --force
 sudo /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Resources/seedutil unenroll
