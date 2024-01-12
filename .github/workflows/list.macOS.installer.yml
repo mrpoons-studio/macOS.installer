@@ -7,7 +7,7 @@ jobs:
     runs-on: macos-12
     steps:
       - name: List Installer
-        run: curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/List%20macOS%20Beta%20Catalog%20URLs" | bash
+        run: curl -L "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/List%20macOS%20Beta%20Catalog%20URLs" | bash
   list-macos-installer:
     runs-on: macos-13
     steps:
