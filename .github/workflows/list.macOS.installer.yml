@@ -13,3 +13,8 @@ jobs:
     steps:
       - name: List Installer
         run: curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/List%20macOS%20Installer%20Versions" | bash
+  list-macos-sucatalog:
+    runs-on: macos-13
+    steps:
+      - name: List SUCatalog.gz in Local macOS Installation
+        run: curl -sL "https://github.com/mrpoons-studio/macOS.installer/raw/main/github.actions.script/List%20SUCatalog%20in%20Local%20macOS%20Installation" | bash
