@@ -1,11 +1,14 @@
 #!/bin/bash 
 # Apple Beta Seeds Program
-sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL "http://swscan.apple.com/content/catalogs/others/index-13seed-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
-sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
-sudo softwareupdate --list-full-installers -a --force
-# sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL "http://swscan.apple.com/content/catalogs/others/index-13beta-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+
+# sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL "http://swscan.apple.com/content/catalogs/others/index-13seed-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
 # sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
 # sudo softwareupdate --list-full-installers -a --force
+
+sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate CatalogURL "http://swscan.apple.com/content/catalogs/others/index-13beta-13-12-10.16-10.15-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog.gz"
+sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
+sudo softwareupdate --list-full-installers -a --force
+
 # sudo defaults delete /Library/Preferences/com.apple.SoftwareUpdate CatalogURL
 # sudo /usr/libexec/PlistBuddy -c Print /Library/Preferences/com.apple.SoftwareUpdate.plist
 # sudo softwareupdate --list-full-installers -a --force
